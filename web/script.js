@@ -1,7 +1,7 @@
 //start of get request to retrieve available coffees
 
 const getInventory = async () => {
-  let results = await axios.get('https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-cc56ce79-08c0-4dc2-8be7-c6eabd473581/cloud/getCoffee');
+  let results = await axios.get('https://faas-fra1-afec6ce7.doserverless.co/api/v1/web/fn-cc56ce79-08c0-4dc2-8be7-c6eabd473581/cloud/getCoffees');
   results.data.forEach(item => {
     let pic = item.pic;
     let name = item.name;

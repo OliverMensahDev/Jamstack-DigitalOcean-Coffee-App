@@ -2,7 +2,7 @@
 const { MongoClient } = require('mongodb');
 
 // Function starts here.
-async function main(args) {
+async function main() {
 
     // MongoDB client configuration.
     const uri = process.env['DATABASE_URL'];
@@ -10,9 +10,8 @@ async function main(args) {
 
     // Instantiates a connection to the database and retrieves data from the `available-coffee` collection
     try {
-        let name = args.name;
         await client.connect();
-        const inventory = await client.db("do-coffee").collection("available-coffees").findOne({name})
+        const inventory = await client.db("do-coffee").collection("available-coffees").find().toArray();
         console.log(inventory);
         return {
             "body": inventory
@@ -20,7 +19,7 @@ async function main(args) {
     } catch (e) {
         console.error(e);
         return {
-            "body": { "error": "There was a problem retrieving data - " + e.message },
+            "body": { "error": "There was a problem retrieving data - " + e.message},
             "statusCode": 400
         };
     } finally {
