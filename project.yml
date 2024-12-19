@@ -11,10 +11,5 @@ packages:
           timeout: 5000
           memory: 256
         runtime: 'nodejs:18'
-      - name: getCoffee
-        limits:
-          timeout: 5000
-          memory: 256
-        runtime: 'nodejs:18'
 environment:
   DATABASE_URL: ${DATABASE_URL}
