@@ -1,4 +1,4 @@
-This repo contains sample code for a GenAI tutorial that teaches users how to intergrate GenAI platform into their web application using DigitalOcean cloud.
+This branch contains the final code for a GenAI tutorial that teaches users how to intergrate GenAI platform into their web application using DigitalOcean cloud.
 
 Once you complete the tutorial, the sample website contains:
 
